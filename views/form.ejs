@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+  <h1><%= title %></h1>
+  <form method="POST" action="/new">
+    <label for="input--author">Message</label>
+    <input name="input--author" required/>
+    <label for="input--msg">Author</label>
+    <input name="input--msg" required/>
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
