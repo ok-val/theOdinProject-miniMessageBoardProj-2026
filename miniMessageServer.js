@@ -11,10 +11,10 @@ app.listen(localport, () => {
 
 // App view engine setting
 app.set('view engine', 'ejs');
-app.set('views', 'projects/miniMessageBoard/views');
+app.set('views', 'views');
 
 // App static files setting
-app.use(express.static('projects/miniMessageBoard/public'));
+app.use(express.static('public'));
 
 // Add routers
 app.use(index_router);
