@@ -34,11 +34,8 @@ const render_msg = (req, res, next) => {
   res.render('msg', { title: ' ', data });
 };
 
-const pushToMessages = (msg) => {
-  messages.push(msg);
-};
-
-const receive_form = (req, res, next) => {
+const add_entry = (req, res, next) => {
+  // Update DB
   pushToMessages({
     id: messages.length,
     text: req.body['input--msg'],
@@ -49,10 +46,17 @@ const receive_form = (req, res, next) => {
   next();
 };
 
+// Utils
+
+function pushToMessages(msg) {
+  messages.push(msg);
+}
+
 export {
+  messages,
   render_home,
   render_form,
-  receive_form,
+  add_entry,
   redirect_form,
   render_msg
 };

@@ -2,14 +2,21 @@
 <html lang="en">
 <%- include('./partials/head.ejs') %>
 <body>
+  <%- include('./partials/nav.ejs') %>
   <h1><%= title %></h1>
   <form method="POST" action="/new">
-    <label for="input--author">Message</label>
+    <label for="input--author">Author</label>
     <input name="input--author" required/>
-    <label for="input--msg">Author</label>
+    <label for="input--msg">Message</label>
     <input name="input--msg" required/>
     <button type="submit">Submit</button>
   </form>
+
+   <% if (locals.errors) { %>
+    <% locals.errors.forEach((err) => { %>
+      <p><%= err.msg %></p>
+    <% }) %>
+  <% } %>
 
 </body>
 </html>

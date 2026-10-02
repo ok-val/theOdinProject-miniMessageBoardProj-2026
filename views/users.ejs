@@ -3,9 +3,11 @@
 <%- include('./partials/head.ejs') %>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <h2><%= data.user%>'s message</h3>
-  <p><%= data.user%></p>
-  <p><%= data.text%></p>
-  <p><%= data.added%></p>
+  <ul>
+    <% messages.forEach((msg) => {%>
+      <li><%= msg.user %></li>
+    <% }) %>
+  </ul>
+  
 </body>
 </html>
