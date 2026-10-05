@@ -7,6 +7,7 @@ class PathNotFoundError extends Error {
 }
 
 const invokeErr_PathNotFound = (req, res) => {
+  console.log(req.method, req.originalUrl);
   throw new PathNotFoundError();
 };
 

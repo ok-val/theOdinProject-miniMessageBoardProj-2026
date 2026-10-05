@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'node:path';
 import index_router from './routes/index.router.js';
 import users_router from './routes/users.router.js';
 import invokeErr_PathNotFound from './errors/pathNotFound.js';
@@ -15,7 +16,10 @@ app.listen(localport, (error) => {
 
 // App view engine setting
 app.set('view engine', 'ejs');
-app.set('views', 'views');
+
+// Absolute paths are needed for debugging
+app.set('views', path.join(import.meta.dirname, 'views'));
+app.use(express.static(path.join(import.meta.dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 // App static files setting
@@ -26,7 +30,7 @@ app.use('/users', users_router);
 app.use(index_router);
 
 // Error handling
-app.use('/{*splat}', invokeErr_PathNotFound);
+// app.use('/{*splat}', invokeErr_PathNotFound);
 
 app.use((err, req, res, next) => {
   console.error(err);

@@ -12,11 +12,7 @@
     <button type="submit">Submit</button>
   </form>
 
-   <% if (locals.errors) { %>
-    <% locals.errors.forEach((err) => { %>
-      <p><%= err.msg %></p>
-    <% }) %>
-  <% } %>
+  <%- include('./partials/form-error.ejs') %>
 
 </body>
 </html>

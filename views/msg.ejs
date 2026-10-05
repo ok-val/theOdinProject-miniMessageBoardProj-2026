@@ -3,8 +3,15 @@
 <%- include('./partials/head.ejs') %>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <h2><%= data.user%>'s message</h3>
+  <h3><%= data.user%>'s message</h3>
   <p><%= data.user%></p>
+  <% if (method == "GET") {%> 
+    <form action="/msg/<%= data.id %>/update" method="POST">
+      <input type="text" name="input--author" placeholder="<%= data.user %>" />
+      <input type="text" name="current--author" value="<%= data.user %>" hidden/>
+      <button type="submit">Submit</button>
+    </form>
+  <% } %> 
   <p><%= data.text%></p>
   <p><%= data.added%></p>
 </body>

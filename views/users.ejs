@@ -6,6 +6,7 @@
   <ul>
     <% messages.forEach((msg) => {%>
       <li><%= msg.user %></li>
+      <a href="/msg/<%= msg.id %>/update">Update</a>
     <% }) %>
   </ul>
   
