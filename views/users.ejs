@@ -3,12 +3,15 @@
 <%- include('./partials/head.ejs') %>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <ul>
-    <% messages.forEach((msg) => {%>
-      <li><%= msg.user %></li>
-      <a href="/msg/<%= msg.id %>/update">Update</a>
-    <% }) %>
-  </ul>
+  <% messages.forEach((msg) => {%>
+    <h3><%= msg.user %></h3>
+    <ul>
+      <li><%= msg.age %></li>
+      <li><%= msg.email %></li>
+      <li><%= msg.bio %></li>
+        <a href="/msg/<%= msg.id %>/update">Update</a>
+    </ul>
+  <% }) %>
   
 </body>
 </html>
