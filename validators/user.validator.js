@@ -5,6 +5,7 @@ const isLengthMsg = 'must be between 1 and 10 characters';
 const isAgeNumeric = 'must contain only numbers';
 const isAgeBetweenRange = 'must be between 18 and 120';
 const isBioWithinWordLimit = 'must not exceed 120 chars';
+const isEmailValid = 'must be a valid email';
 
 const sanitizeInputs = [
   body('input--author')
@@ -22,7 +23,11 @@ const sanitizeInputs = [
     .isNumeric()
     .withMessage(`Age ${isAgeNumeric}`),
 
-  body('input--email').trim().isEmail().normalizeEmail(),
+  body('input--email')
+    .trim()
+    .isEmail()
+    .withMessage(isEmailValid)
+    .normalizeEmail(),
 
   body('input--bio')
     .trim()

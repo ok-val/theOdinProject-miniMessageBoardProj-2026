@@ -44,7 +44,7 @@ const add_entry = (req, res, next) => {
     req.body['input--bio'],
     req.body['input--email']
   );
-  console.log(messages);
+  // console.log(messages);
   next();
 };
 

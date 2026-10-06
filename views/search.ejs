@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <form action="/search/result" method="get">
+    <label for="input--search">Search users</label>
+    <input type="text" name="input--search" />
+  </form>
+  <p>Hint: current users</p>
+  <% messages?.forEach((msg) => {%>
+    <%= msg.user %> 
+  <% }) %>
+
+  <% results?.forEach((res) => {%>
+    <p><%= res.user %></p>
+  <% }) %> 
+
+  <% errors?.forEach((err) => { %>
+    <p><%= err.msg %></p>
+  <% }) %> 
+  
+</body>
+</html>

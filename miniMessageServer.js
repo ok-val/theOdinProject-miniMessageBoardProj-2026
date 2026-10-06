@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'node:path';
 import index_router from './routes/index.router.js';
 import users_router from './routes/users.router.js';
+import search_router from './routes/search.router.js';
 import invokeErr_PathNotFound from './errors/pathNotFound.js';
 
 const app = express();
@@ -27,6 +28,7 @@ app.use(express.static('public'));
 
 // Add routers
 app.use('/users', users_router);
+app.use('/search', search_router);
 app.use(index_router);
 
 // Error handling
