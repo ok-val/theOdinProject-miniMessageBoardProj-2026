@@ -32,6 +32,8 @@ app.use('/search', search_router);
 app.use(index_router);
 
 // Error handling
+// This middleware should use a proper controller for handling errors
+// e.g., errors.controller.js
 // app.use('/{*splat}', invokeErr_PathNotFound);
 
 app.use((err, req, res, next) => {
