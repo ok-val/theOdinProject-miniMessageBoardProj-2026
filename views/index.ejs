@@ -6,8 +6,7 @@
   <h1><%= title %></h1>
   <% messages.forEach(msg => {%>
     <a href="/msg/<%= msg.id%>">
-      <h3 class="user--name"><%= msg.user%></h3>
-      <p class="msg--date"><%= msg.date%></p>
+      <h3 class="user--name"><%= msg.username%></h3>
       <p class="msg--text"><%= msg.text%></p>
     </a>
   <% }) %>

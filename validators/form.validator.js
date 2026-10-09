@@ -8,7 +8,7 @@ const isBioWithinWordLimit = 'must not exceed 120 chars';
 const isEmailValid = 'must be a valid email';
 
 const sanitizeInputs = [
-  body('input--author')
+  body('input--username')
     .trim()
     .isAlpha()
     .withMessage(`Name ${isAlphaMsg}`)

@@ -9,12 +9,16 @@
   </form>
   <p>Hint: current users</p>
   <% messages?.forEach((msg) => {%>
-    <%= msg.user %> 
+    <%= msg.username %> 
   <% }) %>
 
-  <% results?.forEach((res) => {%>
-    <p><%= res.user %></p>
-  <% }) %> 
+  <% if (results.length) { %>
+    <% results?.forEach((res) => {%>
+      <p><%= res.username %></p>
+    <% }) %> 
+  <% } else {%>
+    <p>No username found yet.</p>
+  <% } %>
 
   <% errors?.forEach((err) => { %>
     <p><%= err.msg %></p>

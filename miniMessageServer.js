@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Add routers
-app.use('/users', users_router);
+// app.use('/users', users_router);
 app.use('/search', search_router);
 app.use(index_router);
 
