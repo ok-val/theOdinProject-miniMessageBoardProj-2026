@@ -5,7 +5,7 @@
   <%- include('./partials/nav.ejs') %>
   <h1><%= title %></h1>
   <% messages.forEach(msg => {%>
-    <a href="/msg/<%= msg.id%>">
+    <a href="/users/<%= msg.id%>">
       <h3 class="user--name"><%= msg.username%></h3>
       <p class="msg--text"><%= msg.text%></p>
     </a>
