@@ -5,6 +5,13 @@ const findAllMessages = async () => {
   return rows;
 };
 
+// const findAllUsernames = async () => {
+//   const { rows } = await pool.query(`
+//     SELECT username, age, bio, email FROM messages;
+//   `);
+//   return rows;
+// };
+
 const insertMessage = async (body) => {
   const {
     'input--username': username,
@@ -38,4 +45,31 @@ const findQueryUser = async (q) => {
   return rows;
 };
 
-export { findAllMessages, insertMessage, findQueryUser };
+const findUserInfoById = async (id) => {
+  const { rows } = await pool.query(
+    `
+    SELECT id, username, age, bio, email FROM messages WHERE id = $1; 
+  `,
+    [id]
+  );
+  return rows[0];
+};
+
+const updateUsernameById = async (id, newName) => {
+  await pool.query(
+    `
+    UPDATE messages SET username = $1 WHERE id = $2;   
+  `,
+    [newName, id]
+  );
+  return;
+};
+
+export {
+  findAllMessages,
+  insertMessage,
+  findQueryUser,
+  findUserInfoById,
+  updateUsernameById
+  // findAllUsernames
+};

@@ -17,24 +17,6 @@ const render_form = (req, res) => {
   res.render('form', { title: 'New message' });
 };
 
-// const render_msg = (req, res, next) => {
-//   const dataId = req.params.id;
-//   const data = messages[dataId];
-//   if (!data) {
-//     next('route');
-//   }
-//   res.render('msg', { title: ' ', data, method: null });
-// };
-
-// const render_update_msg = (req, res) => {
-//   const dataId = req.params.id;
-//   const data = messages[dataId];
-//   if (!data) {
-//     next('route');
-//   }
-//   res.render('msg', { title: ' ', data, method: req.method });
-// };
-
 // const add_entry = (req, res, next) => {
 //   // Update DB
 //   pushToMessages(
